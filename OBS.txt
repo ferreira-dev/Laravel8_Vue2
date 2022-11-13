@@ -1,0 +1,37 @@
+*curso: https://www.udemy.com/course/curso-completo-do-desenvolvedor-laravel/
+
+## PAREI NA AULA:
+    (341)-> Configurando o Vue no Laravel
+
+## notas:
+
+[341 - Configurando o Vue no Laravel]
+
+
+        
+        0) Corrigindo erros:
+            For MacOSX and Unix, run the following command before running anything else:
+                export NODE_OPTIONS=--openssl-legacy-provider
+            For Windows, run the following command before running anything else:
+                set NODE_OPTIONS=--openssl-legacy-provider
+
+            Exclua a pasta node_modules contida dentro do projeto.
+
+            Exclua o arquivo package-lock.json (apenas por garantia).
+
+            Instale os módulos da aplicação novamente com o comando npm install. Basta executar esse comando via linha de comando estando dentro do diretório raiz do projeto.
+
+            Após a instalação dos módulos, execute o comando npm run watch novamente e veja se tudo está funcionando corretamente.
+
+        1) Baixar o Laravel
+                "composer install..."
+        2) Instalar Pacote UI
+                "composer require laravel/ui:^3.2.1
+        3) Gerar o esqueleto do projeto com autenticação web nativa
+                "php artisan ui vue --auth
+        4) Baixar as dependencias de frontend
+                "npm install"
+        5) Produzir bundle do frontend
+                "npm run dev"
+
+[343 - Convertendo view Login em componente Vue]
