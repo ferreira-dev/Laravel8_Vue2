@@ -1,7 +1,7 @@
 *curso: https://www.udemy.com/course/curso-completo-do-desenvolvedor-laravel/
 
 ## PAREI NA AULA:
-    (350)-> Criando card de busca de registros
+    (351)-> Criando um componente Vue para encapsular inputs
 
 ## notas:
 

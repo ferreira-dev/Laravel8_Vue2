@@ -8,16 +8,30 @@
                 <div class="card-body">
                     <div class="form-row">
                         <div class="col-5 mb-3">
-                            <label for="inputId" class="form-label">ID</label>
+
+                            <input-container-component
+                                titulo="ID"
+                                id="inputId"
+                                id-help="idHelp"
+                                text-help="Opcional. Informe o id da marca"
+                            >
                             <input type="number" class="form-control" id="inputId" 
                                     aria-describedby="idHelp" min="1" placeholder="ID">
-                            <div id="idHelp" class="form-text text-muted">(Opcional). Informe o Id do registro</div>
+                            </input-container-component>
                         </div>
+
                         <div class="col mb-3">
-                            <label for="inputMarca" class="form-label">Marca</label>
+                            
+                            <input-container-component
+                                titulo="Nome da marca"
+                                id="inputMarca"
+                                id-help="marcaHelp"
+                                text-help="Informe o nome da marca"
+                            >
                             <input type="text" class="form-control" id="inputMarca" 
-                                    aria-describedby="marcaHelp" min="1" placeholder="Nome da marca">
-                            <div id="marcaHelp" class="form-text text-muted">Informe o nome da marca </div>
+                                    aria-describedby="marcaHelp" placeholder="Nome da marca">
+                            </input-container-component>
+                            
                         </div>
                     </div>
                 </div>
