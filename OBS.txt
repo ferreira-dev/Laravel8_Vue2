@@ -1,7 +1,7 @@
 *curso: https://www.udemy.com/course/curso-completo-do-desenvolvedor-laravel/
 
 ## PAREI NA AULA:
-    (347)-> Convertendo view home em componente Vue
+    (350)-> Criando card de busca de registros
 
 ## notas:
 
