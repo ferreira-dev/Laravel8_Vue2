@@ -1,7 +1,7 @@
 *curso: https://www.udemy.com/course/curso-completo-do-desenvolvedor-laravel/
 
 ## PAREI NA AULA:
-    (341)-> Configurando o Vue no Laravel
+    (346)-> Implementando autenticação web e JWT
 
 ## notas:
 
