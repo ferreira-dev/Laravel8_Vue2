@@ -1,7 +1,7 @@
 *curso: https://www.udemy.com/course/curso-completo-do-desenvolvedor-laravel/
 
 ## PAREI NA AULA:
-    (346)-> Implementando autenticação web e JWT
+    (347)-> Convertendo view home em componente Vue
 
 ## notas:
 
@@ -32,6 +32,15 @@
         4) Baixar as dependencias de frontend
                 "npm install"
         5) Produzir bundle do frontend
-                "npm run dev"
+                "npm run watch"
 
 [343 - Convertendo view Login em componente Vue]
+        - passos para converter view blade em componente vue:
+                . recorta conteúdo html dentro do blade e cola no template vue
+                        em /resources/js/components/Componente.Vue dentro da tag <template></template>
+
+                . no lugar do HTML que estava no .blade, instanciar o componente via tag
+                        <nome-component></nome-component>
+
+                . registrar o componente em /resources/js/app.js:
+                        Vue.component('nome-component', require('./components/nome.vue').default);
