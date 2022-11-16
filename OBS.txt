@@ -1,9 +1,7 @@
 *curso: https://www.udemy.com/course/curso-completo-do-desenvolvedor-laravel/
 
 ## PAREI NA AULA:
-    (354)-> Criando um component Vue para cards
-
-## notas:
+    (358)-> Cadastrando marcas
 
 [341 - Configurando o Vue no Laravel]
 
