@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Marcas</div>
 
-                <div class="card-body">
+           <!-- inicio_card_busca -->
+           <card-component titulo="Busca de Marcas">
+                <template v-slot:conteudo>
                     <div class="form-row">
                         <div class="col-5 mb-3">
 
@@ -34,11 +34,24 @@
                             
                         </div>
                     </div>
-                </div>
-                <div class="card-footer">
+                </template>
+                <template v-slot:rodape>
                     <button type="submit" class="btn btn-primary btn-sm float-right">Pesquisar</button>
-                </div>
-            </div>
+                </template>
+           </card-component>
+           <!-- fim_card_busca -->
+
+           <!-- inicio do card de listagem de marcas -->
+           <card-component titulo="Relação de marcas">
+                <template v-slot:conteudo>
+                    <table-component></table-component>
+                </template>
+                <template v-slot:rodape>
+                    <button type="button" class="btn btn-primary btn-sm float-right">Adicionar</button>
+                </template>
+           </card-component>
+           <!-- fim do card de listagem de marcas -->
+           
         </div>
     </div>
 </div>
