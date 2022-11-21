@@ -64,29 +64,71 @@
                         id-help="novoNomeHelp"
                         text-help="Informe o nome da marca"
                     >
-                    <input type="text" class="form-control" id="novoNome" aria-describedby="novoNomeHelp" placeholder="Nome da marca">
+                    <input type="text" class="form-control" id="novoNome" aria-describedby="novoNomeHelp" placeholder="Nome da marca" v-model="nomeMarca">
                 </input-container-component>
             </div>
 
             <div class="form-group">
                 <input-container-component titulo="Imagem" id="novaImagem" id-help="novaImmagemHelp" text-help="Selecione uma imagem">
-                <input type="file" class="form-control-file" id="novaImagem" aria-describedby="novaImmagemHelp" placeholder="Selecione uma imagem">
+                <input type="file" class="form-control-file" id="novaImagem" aria-describedby="novaImmagemHelp" placeholder="Selecione uma imagem" @change="carregarImagem($event)">
                 </input-container-component>
             </div>
     </template>
-    <template v-slot="rodape">
+    <template v-slot:rodape>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Salvar</button>
+        <button type="button" class="btn btn-primary" @click="salvar()">Salvar</button>
     </template>
    </modal-component>
-    
+     
 </div>
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Component MARCAS.')
+        data() {
+            return {
+                urlBase: 'http://localhost:8080/api/v1/marca',
+                nomeMarca: '',
+                arquivoImagem: []
+            }
+        },
+        methods: {
+            carregarImagem(e){
+                this.arquivoImagem = e.target.files[0]
+
+                let extensao = this.arquivoImagem.name.split('.').pop()
+                let allowed = ['jpg', 'jpeg', 'png', 'svg']
+
+                let isValid = allowed.includes(extensao);
+
+                if(!isValid) {
+                    console.log('extensão inválida') //TODO: criar DIV de erro
+                    document.getElementById('novaImagem').value = ""
+                    return;
+                }
+            },
+
+            salvar(){
+                console.log('salvando ...')
+                let formData = new FormData();
+                formData.append('nome', this.nomeMarca)
+                formData.append('imagem', this.arquivoImagem)
+
+                let config = {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                        'Accept': 'application/json'
+                    }
+                }
+
+                axios.post(this.urlBase, formData, config) 
+                    .then(response => {
+                        console.log(response)
+                    }).catch(errors => {
+                        console.log(errors)
+                    })
+
+            }
         }
     }
 </script>
